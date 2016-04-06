@@ -1,0 +1,48 @@
+﻿<Window x:Class="VK_De.WPF.NDimInDg.Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:my="clr-namespace:VK_De.WPF.NDimInDg;assembly=NDimInDg_Git"
+		xmlns:vm="clr-namespace:VK_De.WPF.NDimInDg.Test;assembly=NDimInDgTest_Git"
+        Title="MainWindow" mc:Ignorable="d"   d:DesignHeight="508" d:DesignWidth="855"  WindowState="Maximized">
+	<Window.Resources>
+		<Style x:Key="CellStyleDef" 		TargetType="{x:Type DataGridCell}">
+			<Setter Property="Background" Value="Orange" />
+		</Style>
+	</Window.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30" />
+			<RowDefinition />
+			<RowDefinition Height="30" />
+		</Grid.RowDefinitions>
+		<Menu Height="23" HorizontalAlignment="Left" Margin="24,7,0,0" Name="menu1" VerticalAlignment="Top" Width="257">
+			<MenuItem Header="FrozenColumnCount" >
+				<MenuItem x:Name="MI_0" Header="0" HeaderStringFormat="0" Tag="0" Click="OnMIClick"/>
+				<MenuItem x:Name="MI_1" Header="1" HeaderStringFormat="1" Tag="1" Click="OnMIClick"/>
+				<MenuItem x:Name="MI_2" Header="2" HeaderStringFormat="2" Tag="2" Click="OnMIClick"/>
+				<MenuItem x:Name="MI_3" Header="3" HeaderStringFormat="3" Tag="3" Click="OnMIClick"/>
+				<MenuItem x:Name="MI_4" Header="4" HeaderStringFormat="4" Tag="4" Click="OnMIClick"/>
+				<MenuItem x:Name="MI_5" Header="5" HeaderStringFormat="5" Tag="5" Click="OnMIClick"/>
+				<MenuItem x:Name="MI_6" Header="6" HeaderStringFormat="6" Tag="6" Click="OnMIClick"/>
+			</MenuItem>
+			<MenuItem Header="RowHeaderWidth+" Click="OnRowHeaderWidth"/>
+		</Menu>
+		<my:DataGridEx Grid.Row="1" Name="dataGrid" ViewItemsSource="{Binding ItemsSource}" TopLeftHeaderStyle="{Binding TLHeaderStyle}" CellStyle="{DynamicResource CellStyleDef}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+		<Button x:Name="btClear" Content="Clear" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="50" Command="{Binding CommClear}"/>
+		<Button x:Name="bt0_0" Content="0-0" HorizontalAlignment="Left" Margin="65,5,0,0"  Grid.Row="2" VerticalAlignment="Top" Width="50" Command="{Binding Comm0_0}"/>
+		<Button x:Name="bt1_0" Content="1-0" HorizontalAlignment="Left" Margin="121,5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="50" Command="{Binding Comm1_0}"/>
+		<Button x:Name="bt2_0" Content="2-0" HorizontalAlignment="Left" Margin="176,5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="50" Command="{Binding Comm2_0}"/>
+		<Button x:Name="bt1_1" Content="1-1" HorizontalAlignment="Left" Margin="341,5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="50" Command="{Binding Comm1_1}"/>
+		<Button x:Name="bt1_4" Content="1-4" HorizontalAlignment="Left" Margin="396,5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="50" Command="{Binding Comm1_4}"/>
+		<Button x:Name="bt4_1" Content="4-1" HorizontalAlignment="Left" Margin="451,5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="50" Command="{Binding Comm4_1}"/>
+		<Button x:Name="bt3_2" Content="3-2" HorizontalAlignment="Left" Margin="506,5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="50" Command="{Binding Comm3_2}"/>
+		<Button x:Name="bt2_3" Content="2-3" HorizontalAlignment="Left" Margin="561,5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="50" Command="{Binding Comm2_3}"/>
+		<Button x:Name="bt0_1" Content="0-1" HorizontalAlignment="Left" Margin="231,5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="50" Command="{Binding Comm0_1}"/>
+		<Button x:Name="bt0_2" Content="0-2" HorizontalAlignment="Left" Margin="286,5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="50" Command="{Binding Comm0_2}"/>
+		<Label x:Name="lbMerging" Content="Merging headers:" HorizontalAlignment="Left" Margin="552,4,0,0" VerticalAlignment="Top"/>
+		<CheckBox x:Name="cbRow" Content="Row" HorizontalAlignment="Left" Margin="685,7,0,0" VerticalAlignment="Top" IsChecked="True" Checked="OnCheckedChangedRow" Unchecked="OnCheckedChangedRow"/>
+		<CheckBox x:Name="cbCol" Content="Col" HorizontalAlignment="Left" Margin="756,7,0,0" VerticalAlignment="Top" IsChecked="True" Checked="OnCheckedChangedCol" Unchecked="OnCheckedChangedCol"/>
+	</Grid>
+</Window>
