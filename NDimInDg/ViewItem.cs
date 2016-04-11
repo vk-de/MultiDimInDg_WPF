@@ -15,7 +15,8 @@ namespace VK_De.WPF.NDimInDg {
 		#region Events
 		public event PropertyChangedEventHandler	PropertyChanged;
 		#endregion
-		public	ViewItem(ViewItemPass pass, ViewItemsSource coll){_pass = pass; _coll = coll;}
+		internal	ViewItem(){}
+		internal	ViewItem(ViewItemPass pass, ViewItemsSource coll){_pass = pass; _coll = coll;}
 		#region Methods Private
 		private void NotifyPropertyChanged	(String info){
 			if(PropertyChanged != null)	PropertyChanged(this, new PropertyChangedEventArgs(info));
@@ -24,8 +25,8 @@ namespace VK_De.WPF.NDimInDg {
 		#region Methods Public
 		public	ViewItemPass	Pass			()											{return _pass;}
 		#endregion
-		public	object	GetPropertyValue(ViewPropPass propPass)					{return _coll.GetPropertyValue(propPass, _pass);}
-        public	void	SetPropertyValue(ViewPropPass propPass, object value)	{_coll.SetPropertyValue(propPass, _pass, value);}
+		internal	object	GetPropertyValue(ViewPropPass propPass)					{return _coll.GetPropertyValue(propPass, _pass);}
+        internal	void	SetPropertyValue(ViewPropPass propPass, object value)	{_coll.SetPropertyValue(propPass, _pass, value);}
 	}
 	internal	sealed	class ViewItemPropertyDescr:PropertyDescriptor{
 		#region Variables

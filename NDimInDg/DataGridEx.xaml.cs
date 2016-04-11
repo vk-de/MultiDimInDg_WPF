@@ -15,7 +15,6 @@ using System.Runtime.CompilerServices;
 using VK_De.NDimInDg;
 
 namespace VK_De.WPF.NDimInDg {
-	//	SL_Dg\SL_Dg3\Controls_SL\obj\Debug\DataGridEx_SL.g.i.cs
 	//	Framework 4.5 VirtualizingPanel	.IsVirtualizingWhenGrouping = true
 	//									.CashLength = 
 	public partial class DataGridEx:DataGrid, INotifyPropertyChanged, IDisposable{
@@ -276,7 +275,7 @@ namespace VK_De.WPF.NDimInDg {
 		#region Properties
 		[BindableAttribute(true)]
 		public	GridLength[]		RowHeaderPartWidth	{get{return _rowHeaderPartWidth;}}
-		[BindableAttribute(true)]
+		//[BindableAttribute(true)]
 		public new IEnumerable		ItemsSource			{
 			get{return base.ItemsSource;}
 			set{ViewTypePass	typePass		= null;
